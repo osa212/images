@@ -1,6 +1,6 @@
 # images
 
-[![screenshot.png](https://i.postimg.cc/zfPzxjwY/screenshot.png)](https://postimg.cc/XZd6J9Ds)
+[![screenshot.png](https://i.postimg.cc/2ydfNFW6/screenshot.png)](https://postimg.cc/tngch62Q)
 
 - Two screens: UITable View with photos and detail photo
 - API: https://picsum.photos
