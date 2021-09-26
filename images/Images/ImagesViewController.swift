@@ -80,8 +80,6 @@ class ImagesViewController: UITableViewController {
                     }
                 }
             }
-        
-        
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -89,9 +87,6 @@ class ImagesViewController: UITableViewController {
         let detailVC = segue.destination as? DetailViewController
         detailVC?.viewModel = viewModel.detailViewModelInit(indexPath: indexPath)
     }
-   
-
-    
 }
 
 

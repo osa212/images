@@ -22,7 +22,6 @@ class ImagesViewModel: ImagesViewModelProtocol {
     var pictures: [Picture: Data] = [:]
     
     func getPictures(completion: @escaping () -> Void) {
-        DispatchQueue.global(qos: .background).async { [unowned self] in
             NetworkService.shared.fetchPictures(url: "?page=\(page.value)&limit=10",
                                                 completion: { result in
                 switch result {
@@ -31,7 +30,7 @@ class ImagesViewModel: ImagesViewModelProtocol {
                         
                         StorageService.shared.fetchImage(from: picture.downloadUrl) { data, error in
                             guard let imageData = data else { return }
-                            DispatchQueue.main.async {
+                            DispatchQueue.main.async { [unowned self] in
                                 pictures[picture] = imageData
                                 completion()
                             }
@@ -43,7 +42,6 @@ class ImagesViewModel: ImagesViewModelProtocol {
                     print(error.localizedDescription)
                 }
             })
-        }
     }
     
     func detailViewModelInit(indexPath: IndexPath) -> DetailViewModelProtocol {
